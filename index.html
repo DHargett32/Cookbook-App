@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cookbook App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/cookbook-styles.css">
+        
+    </head>
+    
+    <body ng-app="ngCookbook" ng-controller="cookbookController">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="#">RecipeW/Me</a>
+                </div>
+                <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                </ul>
+                <button class="btn btn-warning navbar-btn disabled">Recipe Picker</button>
+                <button class="btn btn-success navbar-btn">Add Recipe</button>
+            </div>
+        </nav>
+        <div class="well" ng-repeat="recipe in recipes">
+            <h1>{{ recipe.title }}</h1>
+            <h3>Ingredients</h3>
+            <ul>
+                <li ng:repeat="ingredient in recipe.ingredients">
+                    {{ ingredient.name }} ({{ ingredient.measurement }})
+                </li>
+            </ul>
+            <h3>Instructions</h3>
+            <ol>
+                <li ng:repeat="instruction in recipe.instructions">
+                    {{ instruction.step }}
+                </li>
+            </ol>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="app.js"></script>
+    <script src="scripts/cookbookController.js"></script>
+
+
+
+
+</html>
