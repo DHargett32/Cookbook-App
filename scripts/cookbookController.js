@@ -1,6 +1,6 @@
 angular
     .module('ngCookbook')
-    .controller('cookbookController', function($scope){
+    .controller('cookbookController', ['$scope', function($scope){
         $scope.recipes = [
             {
                 "title" :"Grilled Chicken", 
@@ -35,4 +35,11 @@ angular
                 ]
             }
         ];
-    });
+
+        /*$scope.addRecipe = function(){
+            console.log('opening add recipe popup');
+            var modalInstance = $modal.open({
+                tenplateUrl: 'addRecipe.html',
+            });
+        }*/
+    }]);
